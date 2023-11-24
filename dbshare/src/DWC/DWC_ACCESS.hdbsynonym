@@ -1,7 +1,7 @@
 {
-  "COVID_STATS": {
+  "VGR_FACT_ZSD_C03_TC": {
     "target": {
-      "object": "COVID_STATS"
+      "object": "VGR_FACT_ZSD_C03_TC"
     }
   }
 }

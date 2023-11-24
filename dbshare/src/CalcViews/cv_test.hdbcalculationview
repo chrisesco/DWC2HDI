@@ -1,70 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="cv_test" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="cv_test" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
 <descriptions defaultDescription="cv_test"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="COVID_STATS">
-    <resourceUri>COVID_STATS</resourceUri>
+  <DataSource id="VGR_FACT_ZSD_C03_TC">
+    <resourceUri>VGR_FACT_ZSD_C03_TC</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
-<calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-    <viewAttributes>
-      <viewAttribute id="province_state"/>
-      <viewAttribute id="country_region"/>
-      <viewAttribute id="date"/>
-      <viewAttribute id="confirmed"/>
-      <viewAttribute id="deaths"/>
-      <viewAttribute id="latitude"/>
-      <viewAttribute id="recovered"/>
-      <viewAttribute id="longitude"/>
-      <viewAttribute id="active"/>
-      <viewAttribute id="fips"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="COVID_STATS"/>
-  </calculationView>
-</calculationViews>
+<calculationViews/>
 
-<logicalModel id="Projection_1">
+<logicalModel id="VGR_FACT_ZSD_C03_TC">
   <attributes>
-    <attribute id="country_region" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="country_region"/>
-      <keyMapping columnObjectName="Projection_1" columnName="country_region"/>
+    <attribute id="CALDAY" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALDAY"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALDAY"/>
     </attribute>
-    <attribute id="country_region_1" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="country_region"/>
-      <keyMapping columnObjectName="Projection_1" columnName="country_region"/>
+    <attribute id="CALWEEK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALWEEK"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALWEEK"/>
     </attribute>
-    <attribute id="date" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="date"/>
-      <keyMapping columnObjectName="Projection_1" columnName="date"/>
+    <attribute id="FISCPER" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FISCPER"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="FISCPER"/>
+    </attribute>
+    <attribute id="FISCVARNT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FISCVARNT"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="FISCVARNT"/>
+    </attribute>
+    <attribute id="SUBTOT_1S" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBTOT_1S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SUBTOT_1S"/>
+    </attribute>
+    <attribute id="SUBTOT_2S" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBTOT_2S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SUBTOT_2S"/>
+    </attribute>
+    <attribute id="SUBTOT_3S" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBTOT_3S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SUBTOT_3S"/>
+    </attribute>
+    <attribute id="SUBTOT_4S" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBTOT_4S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SUBTOT_4S"/>
+    </attribute>
+    <attribute id="SUBTOT_5S" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBTOT_5S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SUBTOT_5S"/>
+    </attribute>
+    <attribute id="SUBTOT_6S" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBTOT_6S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SUBTOT_6S"/>
+    </attribute>
+    <attribute id="QUANT_B" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QUANT_B"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="QUANT_B"/>
+    </attribute>
+    <attribute id="DOCUMENTS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENTS"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DOCUMENTS"/>
+    </attribute>
+    <attribute id="DOC_ITEMS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOC_ITEMS"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DOC_ITEMS"/>
+    </attribute>
+    <attribute id="NET_VAL_S" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NET_VAL_S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="NET_VAL_S"/>
+    </attribute>
+    <attribute id="COST_VAL_S" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COST_VAL_S"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="COST_VAL_S"/>
+    </attribute>
+    <attribute id="GR_WT_KG" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GR_WT_KG"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="GR_WT_KG"/>
+    </attribute>
+    <attribute id="NT_WT_KG" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NT_WT_KG"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="NT_WT_KG"/>
+    </attribute>
+    <attribute id="VOLUME_CDM" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VOLUME_CDM"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="VOLUME_CDM"/>
+    </attribute>
+    <attribute id="STAT_CURR" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STAT_CURR"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="STAT_CURR"/>
+    </attribute>
+    <attribute id="BASE_UOM" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BASE_UOM"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="BASE_UOM"/>
+    </attribute>
+    <attribute id="BILLTOPRTY" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BILLTOPRTY"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="BILLTOPRTY"/>
+    </attribute>
+    <attribute id="SHIP_TO" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHIP_TO"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SHIP_TO"/>
+    </attribute>
+    <attribute id="SOLD_TO" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOLD_TO"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SOLD_TO"/>
+    </attribute>
+    <attribute id="PAYER" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAYER"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="PAYER"/>
+    </attribute>
+    <attribute id="COMP_CODE" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMP_CODE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="COMP_CODE"/>
+    </attribute>
+    <attribute id="PLANT" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANT"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="PLANT"/>
+    </attribute>
+    <attribute id="SALES_OFF" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALES_OFF"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SALES_OFF"/>
+    </attribute>
+    <attribute id="SHIP_POINT" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHIP_POINT"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SHIP_POINT"/>
+    </attribute>
+    <attribute id="DOC_CLASS" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOC_CLASS"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DOC_CLASS"/>
+    </attribute>
+    <attribute id="DEB_CRED" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEB_CRED"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DEB_CRED"/>
+    </attribute>
+    <attribute id="DOC_CATEG" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOC_CATEG"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DOC_CATEG"/>
+    </attribute>
+    <attribute id="MATERIAL" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="MATERIAL"/>
+    </attribute>
+    <attribute id="VERSION" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERSION"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="VERSION"/>
+    </attribute>
+    <attribute id="VTYPE" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTYPE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="VTYPE"/>
+    </attribute>
+    <attribute id="SALESEMPLY" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALESEMPLY"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SALESEMPLY"/>
+    </attribute>
+    <attribute id="SALES_GRP" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALES_GRP"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SALES_GRP"/>
+    </attribute>
+    <attribute id="DIVISION" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DIVISION"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DIVISION"/>
+    </attribute>
+    <attribute id="DISTR_CHAN" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DISTR_CHAN"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DISTR_CHAN"/>
+    </attribute>
+    <attribute id="CALMONTH2" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALMONTH2"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALMONTH2"/>
+    </attribute>
+    <attribute id="CALMONTH" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALMONTH"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALMONTH"/>
+    </attribute>
+    <attribute id="CALQUART1" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALQUART1"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALQUART1"/>
+    </attribute>
+    <attribute id="CALQUARTER" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALQUARTER"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALQUARTER"/>
+    </attribute>
+    <attribute id="CALYEAR" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALYEAR"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALYEAR"/>
+    </attribute>
+    <attribute id="HALFYEAR1" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HALFYEAR1"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="HALFYEAR1"/>
+    </attribute>
+    <attribute id="FISCYEAR" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FISCYEAR"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="FISCYEAR"/>
+    </attribute>
+    <attribute id="CUST_SALES" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUST_SALES"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CUST_SALES"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_AUGRU" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_AUGRU"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_AUGRU"/>
+    </attribute>
+    <attribute id="MAT_SALES" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAT_SALES"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="MAT_SALES"/>
+    </attribute>
+    <attribute id="SALESORG" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALESORG"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SALESORG"/>
+    </attribute>
+    <attribute id="SALES_DIST" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALES_DIST"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="SALES_DIST"/>
+    </attribute>
+    <attribute id="BILL_TYPE" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BILL_TYPE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="BILL_TYPE"/>
+    </attribute>
+    <attribute id="AF_GRID" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AF_GRID"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="AF_GRID"/>
+    </attribute>
+    <attribute id="AF_COLOR" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AF_COLOR"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="AF_COLOR"/>
+    </attribute>
+    <attribute id="AF_SIZE" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AF_SIZE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="AF_SIZE"/>
+    </attribute>
+    <attribute id="_BIC_ZAF_DIMEN" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZAF_DIMEN"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZAF_DIMEN"/>
+    </attribute>
+    <attribute id="_BIC_ZAF_TONO" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZAF_TONO"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZAF_TONO"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_MUEST" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_MUEST"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_MUEST"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_NUMUE" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_NUMUE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_NUMUE"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_SIGLA" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_SIGLA"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_SIGLA"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_ANOMU" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_ANOMU"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_ANOMU"/>
+    </attribute>
+    <attribute id="LOGSYS" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOGSYS"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="LOGSYS"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_MOTDE" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_MOTDE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_MOTDE"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_AGRMP" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_AGRMP"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_AGRMP"/>
+    </attribute>
+    <attribute id="_BIC_ZAF_TEMA" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZAF_TEMA"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZAF_TEMA"/>
+    </attribute>
+    <attribute id="AF_CGR6" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AF_CGR6"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="AF_CGR6"/>
+    </attribute>
+    <attribute id="NETVAL_INV" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NETVAL_INV"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="NETVAL_INV"/>
+    </attribute>
+    <attribute id="_BIC_ZKF_VLMF1" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZKF_VLMF1"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZKF_VLMF1"/>
+    </attribute>
+    <attribute id="_BIC_ZKF_VLMG1" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZKF_VLMG1"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZKF_VLMG1"/>
+    </attribute>
+    <attribute id="DOC_CURRCY" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOC_CURRCY"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="DOC_CURRCY"/>
+    </attribute>
+    <attribute id="ITEM_CATEG" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEM_CATEG"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="ITEM_CATEG"/>
+    </attribute>
+    <attribute id="TIPO_NEGOCIO" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TIPO_NEGOCIO"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="TIPO_NEGOCIO"/>
+    </attribute>
+    <attribute id="CUST_GROUP" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUST_GROUP"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CUST_GROUP"/>
+    </attribute>
+    <attribute id="MATL_GRP_1" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATL_GRP_1"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="MATL_GRP_1"/>
+    </attribute>
+    <attribute id="_BIC_ZCH_TEJTE" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BIC_ZCH_TEJTE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="/BIC/ZCH_TEJTE"/>
+    </attribute>
+    <attribute id="FUENTE" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FUENTE"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="FUENTE"/>
+    </attribute>
+    <attribute id="CALDAY2" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALDAY2"/>
+      <keyMapping columnObjectName="VGR_FACT_ZSD_C03_TC" columnName="CALDAY2"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
-  <baseMeasures>
-    <measure id="confirmed" order="1" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="confirmed"/>
-      <measureMapping columnObjectName="Projection_1" columnName="confirmed"/>
-    </measure>
-    <measure id="deaths" order="2" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="deaths"/>
-      <measureMapping columnObjectName="Projection_1" columnName="deaths"/>
-    </measure>
-    <measure id="recovered" order="3" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="recovered"/>
-      <measureMapping columnObjectName="Projection_1" columnName="recovered"/>
-    </measure>
-    <measure id="active" order="4" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="active"/>
-      <measureMapping columnObjectName="Projection_1" columnName="active"/>
-    </measure>
-  </baseMeasures>
+  <baseMeasures/>
   <calculatedMeasures/>
   <restrictedMeasures/>
-  <localDimensions/>
 </logicalModel>
 <layout>
   <shapes>
@@ -72,11 +329,6 @@
       <upperLeftCorner x="40" y="85"/>
     </shape>
     
-  
-    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="6" y="224"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
   </shapes>
 </layout>
 </Calculation:scenario>

@@ -6,7 +6,7 @@
 			"object_privileges": [
 				{
 				  "type": "VIEW",
-				  "name": "COVID_STATS",
+				  "name": "VGR_FACT_ZSD_C03_TC",
 				  "privileges_with_grant_option": [
 				    "SELECT"
 				  ]

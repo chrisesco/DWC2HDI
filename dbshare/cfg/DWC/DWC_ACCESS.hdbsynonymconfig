@@ -1,8 +1,8 @@
 {
-	"COVID_STATS" : {
+	"VGR_FACT_ZSD_C03_TC" : {
     	"target": {
     		"schema.configure": "dwcshare/schema",
-    		"object": "COVID_STATS"
+    		"object": "VGR_FACT_ZSD_C03_TC"
     	}
 	}
 }
